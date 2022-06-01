@@ -1,0 +1,15 @@
+name="法外狂徒"
+age=33
+print(type(name),type(age))
+print('我叫'+name+',今年'+str(age)+'岁')
+a=93.333
+print(int(a),type(int(a)))
+b=True
+print(int(b),type(int(b)))
+c='93.4444'
+#print(int(c))#小数字符串不能转变为整数
+print(int(float(c)))
+print(type(c),float(c))
+print(float(age),type(float(age)))
+print(float(b),type(float(b)))
+print(int(float(c)),type(int(float(c))))

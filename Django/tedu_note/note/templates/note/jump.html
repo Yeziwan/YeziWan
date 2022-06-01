@@ -1,0 +1,18 @@
+<body>
+<p>完成任务，还有<span id="sp">1</span>秒跳转到列表界面...</p>
+<script>
+    onload=function () {
+        setInterval(go,1000)
+    };
+    var x=0;
+    function go() {
+
+        if (x>=0){
+            document.getElementById("sp").innerText=x;
+        }else {
+            location.href="/note/all";
+        }
+        x--;
+    }
+</script>
+</body>

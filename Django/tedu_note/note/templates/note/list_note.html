@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>笔记首页</title>
+</head>
+<body>
+{{ request.session.username }}的笔记
+<a href="/note/add">添加笔记</a>
+<a href="/index">返回首页</a>
+<p>
+<a href="/note/make_page_csv">下载csv文件</a>
+<a href="/note/upload">上传文件</a>
+</p>
+
+<table border="1">
+    <tr>
+        <th>序号</th>
+        <th>标题</th>
+        <th>内容</th>
+        <th>创建时间</th>
+        <th>修改时间</th>
+        <th>修改/删除</th>
+    </tr>
+        {% for page in now_page_content %}
+        <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ page.title }}</td>
+        <td>{{ page.content }}</td>
+        <td>{{ page.created_time }}</td>
+        <td>{{ page.updated_time }}</td>
+        <td>
+            <a href="/note/updata/{{ note.id }}">更新</a>
+            <a href="/note/delete?note_id={{ note.id }}">删除</a>
+        </td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% if now_page_content.has_previous %}
+    <a href="/note/all?page={{ now_page_content.previous_page_number }}">上一页</a>
+{% else %}
+
+{% endif %}
+
+{% for now_page_num in paginator.page_range %}
+    {% if now_page_num == now_page_content.number %}
+        {{ now_page_num }}
+    {% else %}
+        <a href="/note/all?page={{ now_page_num }}">{{ now_page_num }}</a>
+    {% endif %}
+{% endfor %}
+
+{% if now_page_content.has_next %}
+    <a href="/note/all?page={{ now_page_content.next_page_number }}">下一页</a>
+{% else %}
+
+{% endif %}
+</body>
+</html>

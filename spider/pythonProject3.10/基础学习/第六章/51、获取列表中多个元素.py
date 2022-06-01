@@ -1,0 +1,33 @@
+list1=[10,20,30,40,50,60,70,80,90]
+#step 为正数
+print("-0,-1,-2,-3,-4,-5,-6,-7,-8")
+print("打印列表左闭右开")
+# print("---------列表从左到右第一个为0---------")
+# print(list1[2])
+# print(list1[2:5:2])#第一个数为start，第二个数为stop，第三个数为step
+# print(list1[1::2])#空缺一个数表示直至最后一位
+# print(list1[::3])
+# print(list1[::2])
+# print(list1[1])
+# print(list1[1:6:2])
+# print(list1[1:5:2])
+# print(list1[1:6:])
+# print(list1)
+# print(list1[0::1])
+# print(list1[1:6:2])
+# print(list1[1:6:1])
+# print(list1[1:7:2])
+# print(list1[1:7:])
+# print(list1[1:8:2])
+# print(list1[1:8:])
+print(list1[0:8:1])
+print(list1[1:6:2])
+print(list1[1:5:2])
+print(list1[:5:2])
+print(list1[1::1])
+print(list1[1:8:1])
+#step 为负数
+print(list1[1::-1])
+print(list1[::-1])
+print(list1[7::-1])
+print(list1[6:0:-2])

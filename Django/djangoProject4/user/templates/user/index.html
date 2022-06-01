@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+
+{% if request.session.username %}
+<p>
+    已登录，欢迎{{ request.session.username }}
+</p>
+<P>
+    <a href="logout">退出登录</a>
+</P>
+<p>
+    <a href="http://127.0.0.1:8000/note/all">进入笔记中心</a>
+</p>
+{% else %}
+    {% if request.COOKIES.username %}
+    <P>
+        已登录，欢迎{{ request.COOKIES.username }}
+    </P>
+    <P>
+        <a href="logout">退出登录</a>
+    </P>
+    <p>
+        <a href="http://127.0.0.1:8000/note/all">进入笔记中心</a>
+    </p>
+{% endif %}
+{% endif %}
+</body>
+</html>

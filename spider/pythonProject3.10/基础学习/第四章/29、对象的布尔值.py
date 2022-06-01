@@ -1,0 +1,13 @@
+print("---------以下为空字符串--------")
+print(bool(False))
+print(bool(0))
+print(bool(0.0))
+print(bool(None))
+print(bool(''))#空字符串
+print(bool(""))#空字符串
+print(bool([]))#空子集
+print(bool(list()))#空列表
+print(bool(()))#空元组
+print(bool({}))#空字典
+print(bool(set()))#空集合
+print('--------------除以上外，布尔值都为ture----------')

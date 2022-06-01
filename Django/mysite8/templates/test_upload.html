@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试上传</title>
+</head>
+<body>
+
+<form action="/test_upload" method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    <P>
+        <input type="text" name="title">
+    </P>
+    <P>
+        <input type="file" name="myfile">
+    </P>
+    <p>
+      <input type="submit" name="上传">
+    </p>
+</form>
+
+</body>
+</html>
